@@ -2,7 +2,7 @@
 
 <html lang="zh-TW">
 <title>fb login</title>
-<p>beta 1.12</p>
+<p>beta 1.13</p>
   
 <fb:login-button 
   scope="public_profile,email,pages_show_list,pages_manage_posts,pages_read_user_content,pages_manage_engagement"
@@ -92,7 +92,7 @@
           console.log(response);
           console.log('Successful login for page_status: ' + response);
           document.getElementById('page_status').innerHTML =
-            'FB page name: ' + response.data[0].name + '!' + 'FB page id: ' + response.data[0].id + '!';
+            'FB page name: ' + response.data[0].name + '!' + 'FB page id: ' + response.data[0].id + '!' + 'FB page access token: ' + response.data[0].access_token + '!' ;
      
         });
 
