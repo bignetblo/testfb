@@ -10,6 +10,8 @@
 <p>beta 1.8</p>
 <div id="status">
 </div>
+  <div id="page_status">
+</div>
 <div id="detail">
 </div>
   
@@ -81,6 +83,13 @@
           console.log('Successful login for: ' + response);
           document.getElementById('status').innerHTML =
             'Thanks for logging in, ' + response.name + '!';
+        });
+        
+        FB.api('/me/accounts', function(response) {
+          console.log(response);
+          console.log('Successful login for page_status: ' + response);
+          document.getElementById('page_status').innerHTML =
+            'name: ' + response.data.name + '!' + 'id: ' + response.data.id + '!';
         });
 
       }
