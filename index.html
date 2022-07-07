@@ -2,7 +2,7 @@
 
 <html lang="zh-TW">
 <title>fb login</title>
-<p>beta 1.14</p>
+<p>beta 1.15</p>
   
 <fb:login-button 
   scope="public_profile,email,pages_show_list,pages_manage_posts,pages_read_user_content,pages_manage_engagement"
@@ -17,7 +17,9 @@
   <br>
 <div id="detail">
 </div>
-  
+ <br>
+<div id="final_token">
+</div>
 </html>
 
 
@@ -82,17 +84,25 @@
         console.log('Welcome!  Fetching your information.... ');
         
         FB.api('/me', function(response) {
-          console.log(response);
           console.log('Successful login for: ' + response.name);
+          console.log(response);
           document.getElementById('status').innerHTML =
             'Logging as: ' + response.name + '!' + '<br>'  + 'UID: ' + response.id + '!';
         });
         
         FB.api('/me/accounts', function(response) {
+          console.log('Successful get fb info.');
           console.log(response);
-          console.log('Successful login for page_status: ' + response);
           document.getElementById('page_status').innerHTML =
             'FB page name: ' + response.data[0].name + '!'+ '<br>' + 'FB page id: ' + response.data[0].id + '!' + '<br>' + 'FB page access token: ' + response.data[0].access_token + '!' ;
+     
+        });
+        
+         FB.api('/oauth/access_token', function(response) {
+           console.log('Successful get long token.' );
+          console.log(response);
+          document.getElementById('final_token').innerHTML =
+            'FB long user token: ' + response.access_token + '!';
      
         });
 
