@@ -85,14 +85,14 @@
           console.log(response);
           console.log('Successful login for: ' + response.name);
           document.getElementById('status').innerHTML =
-            'Logging as: ' + response.name + '!'  <br> 'UID: ' + response.id + '!';
+            'Logging as: ' + response.name + '!'  + 'UID: ' + response.id + '!';
         });
         
         FB.api('/me/accounts', function(response) {
           console.log(response);
           console.log('Successful login for page_status: ' + response);
           document.getElementById('page_status').innerHTML =
-            'FB page name: ' + response.data[0].name + '!' <br>  'FB page id: ' + response.data[0].id + '!';
+            'FB page name: ' + response.data[0].name + '!' + 'FB page id: ' + response.data[0].id + '!';
      
         });
 
