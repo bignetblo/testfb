@@ -4,10 +4,10 @@
 <title>fb login</title>
 
 <fb:login-button 
-  scope="public_profile,email,pages_show_list,pages_manage_posts,pages_read_user_content,pages_manage_engagement"
+  scope="public_profile,email,pages_show_list"
   onlogin="checkLoginState();">
 </fb:login-button>
-<p>beta 1.4</p>
+<p>beta 1.5</p>
 <div id="status">
 </div>
 <div id="detail">
@@ -48,7 +48,7 @@
         if (response.status === 'connected') {
           // Logged into your app and Facebook.
           document.getElementById('detail').innerHTML =
-            'logged ' + response.authResponse + '!';
+            'logged ' + response.authResponse.accessToken + '!';
           testAPI();
         } else if (response.status === 'not_authorized') {
           // The person is logged into Facebook, but not your app.
