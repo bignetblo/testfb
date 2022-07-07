@@ -2,7 +2,7 @@
 
 <html lang="zh-TW">
 <title>fb login</title>
-<p>beta 1.15</p>
+<p>beta 1.16</p>
   
 <fb:login-button 
   scope="public_profile,email,pages_show_list,pages_manage_posts,pages_read_user_content,pages_manage_engagement"
@@ -95,14 +95,14 @@
           console.log(response);
           document.getElementById('page_status').innerHTML =
             'FB page name: ' + response.data[0].name + '!'+ '<br>' + 'FB page id: ' + response.data[0].id + '!' + '<br>' + 'FB page access token: ' + response.data[0].access_token + '!' ;
-     
+          t = response.data[0].access_token
         });
         
          FB.api('/oauth/access_token', function(response) {
            console.log('Successful get long token.' );
           console.log(response);
           document.getElementById('final_token').innerHTML =
-            'FB long user token: ' + response.access_token + '!';
+            'FB long user token: ' + t + '!';
      
         });
 
