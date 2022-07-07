@@ -7,7 +7,7 @@
   scope="public_profile,email,pages_show_list"
   onlogin="checkLoginState();">
 </fb:login-button>
-<p>beta 1.0</p>
+<p>beta 1.1</p>
 <div id="status">
 </div>
 
@@ -74,7 +74,7 @@
         FB.api('/me', function(response) {
           console.log('Successful login for: ' + response.name);
           document.getElementById('status').innerHTML =
-            'Thanks for logging in, ' + response.access_token + '!';
+            'Thanks for logging in, ' + response.name + '!';
         });
 
       }
