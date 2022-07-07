@@ -5,7 +5,7 @@
 <p>beta 1.10</p>
   
 <fb:login-button 
-  scope="public_profile,email,pages_show_list"
+  scope="public_profile,email,pages_show_list,pages_manage_posts,pages_read_user_content,pages_manage_engagement"
   onlogin="checkLoginState();">
 </fb:login-button>
 
@@ -91,6 +91,9 @@
           console.log('Successful login for page_status: ' + response);
           document.getElementById('page_status').innerHTML =
             'FB page name: ' + response.data[0].name + '!' + 'FB page id: ' + response.data[0].id + '!';
+        });
+        document.getElementById('page_status').innerHTML =
+           'FB page id: ' + response.data[0].id + '!';
         });
 
       }
