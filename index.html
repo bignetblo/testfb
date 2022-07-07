@@ -10,7 +10,9 @@
 <p>beta 1.2</p>
 <div id="status">
 </div>
-
+<div id="detail">
+</div>
+  
 </html>
 
 
@@ -75,6 +77,8 @@
           console.log('Successful login for: ' + response.name);
           document.getElementById('status').innerHTML =
             'Thanks for logging in, ' + response.name + '!';
+          document.getElementById('detail').innerHTML =
+            'logged ' + response.authResponse + '!';
         });
 
       }
